@@ -46,7 +46,16 @@ class IdeasList extends Component {
 
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
-    if(!state.ideas.length) {
+    if(state.ideas.length) {
+      return (
+        <ListView
+          showsVerticalScrollIndicator={false}
+          automaticallyAdjustContentInsets={false}
+          dataSource={ds.cloneWithRows(state.ideas)}
+          renderRow={this.renderCell.bind(this)}
+        />
+      );
+    } else {
       return (
         <View style={styles.container}>
           <View style={styles.welcomeContainer}>
@@ -58,17 +67,7 @@ class IdeasList extends Component {
           </View>
         </View>
       );
-    } else {
-      return (
-        <ListView
-          style={styles.listView}
-          showsVerticalScrollIndicator={false}
-          dataSource={ds.cloneWithRows(state.ideas)}
-          renderRow={this.renderCell.bind(this)}
-        />
-      );
     }
-
   }
 
   renderCell(idea, sectionID, rowID) {
@@ -107,8 +106,6 @@ export default connect(state => (
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f2f2f2',
-    paddingTop: 64,
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center'
@@ -131,9 +128,5 @@ const styles = StyleSheet.create({
   },
   welcomeButton: {
     marginBottom: 150
-  },
-  listView: {
-    paddingTop: 64,
-    backgroundColor: '#f2f2f2'
   }
 });

@@ -1,7 +1,8 @@
 const designUnit = {
   primaryColor: '#6d4a72',
   tintColor: '#ffffff',
-  titleTextColor: '#ffffff'
+  titleTextColor: '#ffffff',
+  backgroundColor: '#f2f2f2'
 };
 
 const designComp = {
