@@ -11,16 +11,29 @@ import design from '../design';
 
 import Ideas from './Ideas';
 import AddIdea from '../components/AddIdea';
+import Settings from '../components/Settings';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      settingsIcon: null
+    };
+    Icon.getImageSource('navicon', 32, 'red').then(
+      (source) => this.setState({
+        settingsIcon: source
+      })
+    );
   }
 
   render() {
+    if(!this.state.settingsIcon) {
+      return false;
+    }
     return (
       <NavigatorIOS
-        ref="nav"
+        ref='nav'
         style={styles.container}
         itemWrapperStyle={styles.wrapper}
         tintColor={design.designUnit.tintColor}
@@ -35,6 +48,7 @@ export default class App extends Component {
               title: 'New idea',
               component: AddIdea,
               rightButtonTitle: '',
+              leftButtonIcon: '',
               passProps: {
                 newIdea: true
               }
@@ -42,6 +56,15 @@ export default class App extends Component {
           }
         }}
         rightButtonTitle='Add'
+        leftButtonIcon={this.state.settingsIcon}
+        onLeftButtonPress={() => {
+          this.refs.nav.navigator.push({
+            title: 'Settings',
+            component: Settings,
+            rightButtonTitle: '',
+            leftButtonIcon: ''
+          });
+        }}
       />
     );
   }

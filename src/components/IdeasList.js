@@ -35,6 +35,7 @@ class IdeasList extends Component {
       title: 'New idea',
       component: AddIdea,
       rightButtonTitle: '',
+      leftButtonIcon: '',
       passProps: {
         newIdea: true
       }
@@ -81,6 +82,7 @@ class IdeasList extends Component {
           title:  'Idea #' + rowIDDisplay,
           component: AddIdea,
           rightButtonTitle: '',
+          leftButtonIcon: '',
           passProps: {
             rowID: rowID,
             rowIDDisplay: rowIDDisplay,
