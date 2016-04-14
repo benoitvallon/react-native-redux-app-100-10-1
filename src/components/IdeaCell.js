@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   arrowRightContainer: {
-    width: 40,
+    width: 50,
     justifyContent: 'center'
   },
   arrowRight:{
