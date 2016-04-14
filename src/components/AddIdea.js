@@ -81,9 +81,10 @@ class AddIdea extends Component {
     return (
       <View style={styles.container}>
         <Text style={design.designComp.label}>
+          My idea:
         </Text>
         <TextInput
-          placeholder='Enter your idea'
+          placeholder='Enter your idea here...'
           style={styles.input}
           multiline={true}
           onChangeText={(text) => this._handleTextChange({text})}
