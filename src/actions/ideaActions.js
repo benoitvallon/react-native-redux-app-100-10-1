@@ -20,3 +20,9 @@ export function remove(rowID) {
     data: rowID
   };
 }
+
+export function reset() {
+  return {
+    type: types.RESET
+  };
+}

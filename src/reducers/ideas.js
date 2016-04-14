@@ -30,6 +30,11 @@ export default function counter(state = initialState, action = {}) {
         ...state,
         ideas: ideas
       };
+    case types.RESET:
+      return {
+        ...state,
+        ideas: []
+      };
     default:
       return state;
   }

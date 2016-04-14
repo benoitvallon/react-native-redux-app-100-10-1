@@ -37,6 +37,24 @@ class Settings extends Component {
       text: ideasString
     });
   }
+  _handleResetIdeas() {
+    const { actions } = this.props;
+
+    Alert.alert(
+      'Confirm suppression',
+      'Are you sure you want to delete all of your ideas?',
+      [{
+        text: 'OK', onPress: () => {
+          actions.reset();
+          this.props.navigator.pop();
+        }
+      },
+      {
+        text: 'Cancel'
+      }]
+    );
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -45,6 +63,12 @@ class Settings extends Component {
         </Text>
         <TouchableOpacity onPress={this._handleShare.bind(this)} style={design.designComp.button}>
           <Text style={design.designComp.buttonText}>Email/Share</Text>
+        </TouchableOpacity>
+        <Text style={styles.inputLabel}>
+          Delete your idea list:
+        </Text>
+        <TouchableOpacity onPress={this._handleResetIdeas.bind(this)} style={design.designComp.button}>
+          <Text style={design.designComp.buttonText}>Reset ideas</Text>
         </TouchableOpacity>
       </View>
     );
