@@ -26,13 +26,11 @@ class Settings extends Component {
   _handleShare() {
     const { state } = this.props;
 
-    var ideasString = state.ideas.map((idea, index) => {
+    let ideasString = state.ideas.map((idea, index) => {
       return state.ideas.length - parseInt(index) + '-' + idea.title;
     }).reverse().join('\n');
 
     ideasString = 'My idea list:\n\n' + ideasString;
-
-    console.log('ideasString', ideasString);
     ActivityView.show({
       text: ideasString
     });
