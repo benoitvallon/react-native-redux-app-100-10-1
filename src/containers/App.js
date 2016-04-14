@@ -39,7 +39,6 @@ export default class App extends Component {
         tintColor={design.designUnit.tintColor}
         barTintColor={design.designUnit.primaryColor}
         titleTextColor={design.designUnit.titleTextColor}
-
         initialRoute={{
           component: Ideas,
           title: 'My ideas',

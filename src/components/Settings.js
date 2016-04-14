@@ -56,13 +56,13 @@ class Settings extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.inputLabel}>
+        <Text style={design.designComp.label}>
           Send or share your idea list:
         </Text>
         <TouchableOpacity onPress={this._handleShare.bind(this)} style={design.designComp.button}>
           <Text style={design.designComp.buttonText}>Email/Share</Text>
         </TouchableOpacity>
-        <Text style={styles.inputLabel}>
+        <Text style={design.designComp.label}>
           Delete your idea list:
         </Text>
         <TouchableOpacity onPress={this._handleResetIdeas.bind(this)} style={design.designComp.button}>
@@ -85,10 +85,5 @@ export default connect(
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  inputLabel: {
-    paddingLeft: 17,
-    paddingTop: 24,
-    fontSize: 20
   }
 });

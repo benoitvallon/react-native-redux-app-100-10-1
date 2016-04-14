@@ -80,8 +80,7 @@ class AddIdea extends Component {
 
     return (
       <View style={styles.container}>
-        <Text style={styles.inputLabel}>
-          Describe your idea:
+        <Text style={design.designComp.label}>
         </Text>
         <TextInput
           placeholder='Enter your idea'
@@ -123,11 +122,6 @@ export default connect(
 const styles = StyleSheet.create({
   container: {
     flex: 1
-  },
-  inputLabel: {
-    paddingLeft: 17,
-    paddingTop: 24,
-    fontSize: 20
   },
   input: {
     backgroundColor: 'white',
