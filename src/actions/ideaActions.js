@@ -7,10 +7,10 @@ export function add(idea) {
   };
 }
 
-export function save(data) {
+export function save(idea) {
   return {
     type: types.SAVE,
-    data: data
+    data: idea
   };
 }
 
