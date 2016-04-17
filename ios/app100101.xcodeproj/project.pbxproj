@@ -20,6 +20,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1442E8081CC1DFA400CEBE4C /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1442E8071CC1DFA400CEBE4C /* DeviceUtil.m */; };
+		1442E8191CC1E14200CEBE4C /* Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1442E8181CC1E14200CEBE4C /* Orientation.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1476CFF81CBC80CB0092C035 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1476CFF71CBC80CB0092C035 /* Images.xcassets */; };
 		183AC3CE6D9C43BEA8F4FD63 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80284E5596AF48DFA0F5A924 /* MaterialIcons.ttf */; };
@@ -146,6 +148,10 @@
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = app100101/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = app100101/main.m; sourceTree = "<group>"; };
+		1442E8061CC1DFA400CEBE4C /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceUtil.h; path = app100101/DeviceUtil.h; sourceTree = "<group>"; };
+		1442E8071CC1DFA400CEBE4C /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceUtil.m; path = app100101/DeviceUtil.m; sourceTree = "<group>"; };
+		1442E8171CC1E14200CEBE4C /* Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Orientation.h; path = "../node_modules/react-native-orientation/RCTOrientation/Orientation.h"; sourceTree = "<group>"; };
+		1442E8181CC1E14200CEBE4C /* Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Orientation.m; path = "../node_modules/react-native-orientation/RCTOrientation/Orientation.m"; sourceTree = "<group>"; };
 		1450563AAF7C427EA6B0B49F /* ActivityView.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ActivityView.xcodeproj; path = "../node_modules/react-native-activity-view/ActivityView.xcodeproj"; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1476CFF71CBC80CB0092C035 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -270,6 +276,10 @@
 		13B07FAE1A68108700A75B9A /* app100101 */ = {
 			isa = PBXGroup;
 			children = (
+				1442E8171CC1E14200CEBE4C /* Orientation.h */,
+				1442E8181CC1E14200CEBE4C /* Orientation.m */,
+				1442E8061CC1DFA400CEBE4C /* DeviceUtil.h */,
+				1442E8071CC1DFA400CEBE4C /* DeviceUtil.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -647,6 +657,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1442E8191CC1E14200CEBE4C /* Orientation.m in Sources */,
+				1442E8081CC1DFA400CEBE4C /* DeviceUtil.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
