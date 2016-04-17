@@ -44,13 +44,11 @@ class AddIdea extends Component {
   }
   _handleSaveIdea() {
     const { actions } = this.props;
+
     if(this.state.text === '') {
       this._handleRemoveIdea();
     } else {
-      actions.save({
-        rowID: this.props.rowID,
-        idea: this.state.text
-      });
+      actions.save(this.state.text, this.props.index);
       this.props.navigator.pop();
     }
   }

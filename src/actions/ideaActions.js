@@ -7,17 +7,20 @@ export function add(idea) {
   };
 }
 
-export function save(idea) {
+export function save(idea, index) {
   return {
     type: types.SAVE,
-    data: idea
+    data: {
+      idea,
+      index
+    }
   };
 }
 
-export function remove(rowID) {
+export function remove(index) {
   return {
     type: types.REMOVE,
-    data: rowID
+    data: index
   };
 }
 

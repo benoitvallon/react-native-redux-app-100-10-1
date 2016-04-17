@@ -5,7 +5,7 @@ jest.disableAutomock();
 import * as actions from '../../../actions/ideaActions';
 import * as types from '../../../actions/actionTypes';
 
-describe('ideaActions', function() {
+describe('idea actions', function() {
 
   it('should be find an actions file', function() {
     expect(actions).toBeDefined();
@@ -21,21 +21,25 @@ describe('ideaActions', function() {
   });
 
   it('should create an action to save an idea', function() {
+    const index = 1;
     const idea = 'My second idea';
     const expectedAction = {
       type: types.SAVE,
-      data: idea
+      data: {
+        idea,
+        index
+      }
     };
-    expect(actions.save(idea)).toEqual(expectedAction);
+    expect(actions.save(idea, index)).toEqual(expectedAction);
   });
 
   it('should create an action to remove an idea', function() {
-    const rowID = 1;
+    const index = 1;
     const expectedAction = {
       type: types.REMOVE,
-      data: rowID
+      data: index
     };
-    expect(actions.remove(rowID)).toEqual(expectedAction);
+    expect(actions.remove(index)).toEqual(expectedAction);
   });
 
   it('should create an action to reset the idea list', function() {
