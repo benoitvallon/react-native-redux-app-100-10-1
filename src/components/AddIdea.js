@@ -62,7 +62,7 @@ class AddIdea extends Component {
       'Are you sure you want to delete this idea?',
       [{
         text: 'OK', onPress: () => {
-          actions.remove(this.props.rowID);
+          actions.remove(this.props.index);
           this.props.navigator.pop();
         }
       },

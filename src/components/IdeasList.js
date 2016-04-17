@@ -48,11 +48,16 @@ class IdeasList extends Component {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     if(state.ideas.length) {
+      const ideas = [];
+      for(let i = 0; i < state.ideas.length; i++) {
+        ideas[state.ideas.length - 1 - i] = state.ideas[i];
+      }
+
       return (
         <ListView
           showsVerticalScrollIndicator={false}
           automaticallyAdjustContentInsets={false}
-          dataSource={ds.cloneWithRows(state.ideas)}
+          dataSource={ds.cloneWithRows(ideas)}
           renderRow={this.renderCell.bind(this)}
         />
       );
@@ -74,7 +79,6 @@ class IdeasList extends Component {
   renderCell(idea, sectionID, rowID) {
     const { state } = this.props;
 
-    rowID = parseInt(rowID);
     const rowIDDisplay = state.ideas.length - parseInt(rowID);
     return (
       <IdeaCell onSelect={() => this._handleNextButtonPress(
@@ -84,7 +88,7 @@ class IdeasList extends Component {
           rightButtonTitle: '',
           leftButtonIcon: '',
           passProps: {
-            rowID: rowID,
+            index: rowIDDisplay - 1,
             rowIDDisplay: rowIDDisplay,
             idea: idea.title
           }

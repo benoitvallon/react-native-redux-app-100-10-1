@@ -4,35 +4,35 @@ const initialState = {
   ideas: []
 };
 
-export default function counter(state = initialState, action = {}) {
-  let ideas;
+export default function ideas(state = initialState, action = {}) {
   switch (action.type) {
     case types.ADD:
-      ideas = state.ideas.slice();
-      ideas.unshift({
-        title: action.data
-      });
       return {
-        ...state,
-        ideas: ideas
+        ideas: [
+          ...state.ideas,
+          {
+            title: action.data.trim()
+          }
+        ]
       };
     case types.SAVE:
-      ideas = state.ideas.slice();
-      ideas[action.data.rowID].title = action.data.idea;
+      console.log('action.data', action.data);
       return {
-        ...state,
-        ideas: ideas
+        ideas: state.ideas.map((idea, index) => {
+          if(action.data.index === index) {
+            idea.title = action.data.idea.trim();
+          }
+          return idea;
+        })
       };
     case types.REMOVE:
-      ideas = state.ideas.slice();
-      ideas.splice(action.data, 1);
       return {
-        ...state,
-        ideas: ideas
+        ideas: state.ideas.filter((idea, index) => {
+          return action.data !== index;
+        })
       };
     case types.RESET:
       return {
-        ...state,
         ideas: []
       };
     default:
