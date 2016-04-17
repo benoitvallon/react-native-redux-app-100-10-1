@@ -24,18 +24,14 @@ class IdeasList extends Component {
     super(props);
   }
 
-  _handleBackButtonPress() {
-    this.props.navigator.pop();
-  }
   _handleNextButtonPress(nextRoute) {
     this.props.navigator.push(nextRoute);
   }
   _handleAddIdea() {
     this.props.navigator.push({
-      title: 'New idea',
       component: AddIdea,
-      rightButtonTitle: '',
-      leftButtonIcon: '',
+      title: 'New idea',
+      onRightButton: '',
       passProps: {
         newIdea: true
       }
@@ -55,6 +51,7 @@ class IdeasList extends Component {
 
       return (
         <ListView
+          style={styles.list}
           showsVerticalScrollIndicator={false}
           automaticallyAdjustContentInsets={false}
           dataSource={ds.cloneWithRows(ideas)}
@@ -83,10 +80,8 @@ class IdeasList extends Component {
     return (
       <IdeaCell onSelect={() => this._handleNextButtonPress(
         {
-          title:  'Idea #' + rowIDDisplay,
           component: AddIdea,
-          rightButtonTitle: '',
-          leftButtonIcon: '',
+          title:  'Idea #' + rowIDDisplay,
           passProps: {
             index: rowIDDisplay - 1,
             rowIDDisplay: rowIDDisplay,
@@ -134,5 +129,9 @@ const styles = StyleSheet.create({
   },
   welcomeButton: {
     marginBottom: 150
+  },
+  list: {
+    flex: 1,
+    paddingTop: 64
   }
 });
