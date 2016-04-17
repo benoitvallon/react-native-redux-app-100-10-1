@@ -27,8 +27,8 @@ class Settings extends Component {
     const { state } = this.props;
 
     let ideasString = state.ideas.map((idea, index) => {
-      return state.ideas.length - parseInt(index) + '-' + idea.title;
-    }).reverse().join('\n');
+      return index + 1 + '-' + idea.title;
+    }).join('\n');
 
     ideasString = 'My idea list:\n\n' + ideasString;
     ActivityView.show({
