@@ -1,7 +1,19 @@
 {
   "name": "app-100-10-1",
   "version": "0.0.1",
-  "private": true,
+  "author": "Benoit VALLON <benoitvallon@gmail.com> (http://github.com/benoitvallon)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benoitvallon/react-native-redux-app-100-10-1"
+  },
+  "homepage": "https://github.com/benoitvallon/react-native-redux-app-100-10-1",
+  "keywords": [
+    "react",
+    "react-native",
+    "redux",
+    "babel"
+  ],
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest --no-cache"
