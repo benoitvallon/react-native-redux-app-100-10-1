@@ -16,7 +16,6 @@ export default function ideas(state = initialState, action = {}) {
         ]
       };
     case types.SAVE:
-      console.log('action.data', action.data);
       return {
         ideas: state.ideas.map((idea, index) => {
           if(action.data.index === index) {
