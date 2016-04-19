@@ -24,9 +24,6 @@ class IdeasList extends Component {
     super(props);
   }
 
-  _handleBackButtonPress() {
-    this.props.navigator.pop();
-  }
   _handleNextButtonPress(nextRoute) {
     this.props.navigator.push(nextRoute);
   }
