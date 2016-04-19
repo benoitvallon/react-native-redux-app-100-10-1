@@ -6,7 +6,9 @@ import React, {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert,
+  TouchableHighlight
 } from 'react-native';
 
 import * as ideaActions from '../actions/ideaActions';
@@ -19,6 +21,8 @@ import design from '../design';
 import IdeaCell from '../components/IdeaCell';
 import AddIdea from '../components/AddIdea';
 
+import { SwipeListView } from 'react-native-swipe-list-view';
+
 class IdeasList extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +31,25 @@ class IdeasList extends Component {
   _handleNextButtonPress(nextRoute) {
     this.props.navigator.push(nextRoute);
   }
+
+  _handleRemoveIdea(rowID) {
+    const { actions } = this.props;
+
+    Alert.alert(
+      'Confirm suppression',
+      'Are you sure you want to delete this idea?',
+      [{
+        text: 'OK', onPress: () => {
+          actions.remove(rowID);
+          this.props.navigator.pop();
+        }
+      },
+      {
+        text: 'Cancel'
+      }]
+    );
+  }
+
   _handleAddIdea() {
     this.props.navigator.push({
       title: 'New idea',
@@ -51,11 +74,18 @@ class IdeasList extends Component {
       }
 
       return (
-        <ListView
+        <SwipeListView
           showsVerticalScrollIndicator={false}
           automaticallyAdjustContentInsets={false}
           dataSource={ds.cloneWithRows(ideas)}
           renderRow={this.renderCell.bind(this)}
+          renderHiddenRow={(idea, sectionID, rowID) => (
+            <TouchableHighlight onPress={this._handleRemoveIdea(rowID)} style={styles.rowBack}>
+              <Text style={styles.rowBackText}>Delete</Text>
+            </TouchableHighlight>
+          )}
+          leftOpenValue={0}
+          rightOpenValue={-75}
         />
       );
     } else {
@@ -131,5 +161,18 @@ const styles = StyleSheet.create({
   },
   welcomeButton: {
     marginBottom: 150
+  },
+  rowBack: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: 15
+  },
+  rowBackText: {
+    backgroundColor: 'blue',
+    color: 'white',
+    textAlign: 'right'
   }
 });
