@@ -33,15 +33,15 @@ class IdeasList extends Component {
   }
 
   _handleRemoveIdea(rowID) {
-    const { actions } = this.props;
+    const { state, actions } = this.props;
+    var index = state.ideas.length - parseInt(rowID) - rowID;
 
     Alert.alert(
       'Confirm suppression',
       'Are you sure you want to delete this idea?',
       [{
         text: 'OK', onPress: () => {
-          actions.remove(rowID);
-          this.props.navigator.pop();
+          actions.remove(index);
         }
       },
       {
