@@ -52,16 +52,16 @@ class IdeasList extends Component {
     );
   }
 
-  _closeAllRows() {
-    this._rows.forEach((row) => {
-      if(row) {
+  _closeAllRows(index) {
+    this._rows.forEach((row, rowIndex) => {
+      if(row && rowIndex !== index) {
         row._close();
       }
     });
   }
 
-  _handleOpen() {
-    this._closeAllRows();
+  _handleOpen(index) {
+    this._closeAllRows(index);
   }
 
   _handleAddIdea() {
