@@ -173,7 +173,6 @@ const styles = StyleSheet.create({
     padding: 15
   },
   rowBackText: {
-    backgroundColor: 'blue',
     color: 'white',
     textAlign: 'right'
   }
