@@ -80,13 +80,13 @@ class IdeasList extends Component {
           dataSource={ds.cloneWithRows(ideas)}
           renderRow={this.renderCell.bind(this)}
           renderHiddenRow={(idea, sectionID, rowID) => (
-            <TouchableHighlight onPress={ () => {
+            <TouchableHighlight onPress={() => {
               this._handleRemoveIdea(rowID);
             }} style={styles.rowBack}>
               <Text style={styles.rowBackText}>Delete</Text>
             </TouchableHighlight>
           )}
-          leftOpenValue={0}
+          disableRightSwipe={true}
           rightOpenValue={-75}
         />
       );
