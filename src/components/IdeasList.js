@@ -28,7 +28,7 @@ class IdeasList extends Component {
     super(props);
   }
 
-  _handleNextButtonPress(nextRoute) {
+  _handleEditIdea(nextRoute) {
     this.props.navigator.push(nextRoute);
   }
 
@@ -110,7 +110,7 @@ class IdeasList extends Component {
 
     const rowIDDisplay = state.ideas.length - parseInt(rowID);
     return (
-      <IdeaCell onSelect={() => this._handleNextButtonPress(
+      <IdeaCell onSelect={() => this._handleEditIdea(
         {
           title:  'Idea #' + rowIDDisplay,
           component: AddIdea,
