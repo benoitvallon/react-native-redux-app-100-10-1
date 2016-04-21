@@ -7,8 +7,7 @@ import React, {
   Text,
   View,
   TouchableOpacity,
-  Alert,
-  TouchableHighlight
+  Alert
 } from 'react-native';
 
 import * as ideaActions from '../actions/ideaActions';
@@ -21,36 +20,52 @@ import design from '../design';
 import IdeaCell from '../components/IdeaCell';
 import AddIdea from '../components/AddIdea';
 
-import { SwipeListView } from 'react-native-swipe-list-view';
+import Swipeout from 'react-native-swipeout';
 
 class IdeasList extends Component {
   constructor(props) {
     super(props);
+    this._rows = [];
   }
 
   _handleEditIdea(nextRoute) {
     this.props.navigator.push(nextRoute);
   }
 
-  _handleRemoveIdea(rowID) {
-    const { state, actions } = this.props;
-    var index = state.ideas.length - parseInt(rowID) - rowID;
+  _handleRemoveIdea(index) {
+    const { actions } = this.props;
 
     Alert.alert(
       'Confirm suppression',
       'Are you sure you want to delete this idea?',
       [{
         text: 'OK', onPress: () => {
+          this._closeAllRows();
           actions.remove(index);
         }
       },
       {
-        text: 'Cancel'
+        text: 'Cancel', onPress: () => {
+          this._closeAllRows();
+        }
       }]
     );
   }
 
+  _closeAllRows() {
+    this._rows.forEach((row) => {
+      if(row) {
+        row._close();
+      }
+    });
+  }
+
+  _handleOpen() {
+    this._closeAllRows();
+  }
+
   _handleAddIdea() {
+    this._closeAllRows();
     this.props.navigator.push({
       title: 'New idea',
       component: AddIdea,
@@ -60,6 +75,10 @@ class IdeasList extends Component {
         newIdea: true
       }
     });
+  }
+
+  componentWillUpdate() {
+    this._closeAllRows();
   }
 
   render() {
@@ -74,20 +93,11 @@ class IdeasList extends Component {
       }
 
       return (
-        <SwipeListView
+        <ListView
           showsVerticalScrollIndicator={false}
           automaticallyAdjustContentInsets={false}
           dataSource={ds.cloneWithRows(ideas)}
           renderRow={this.renderCell.bind(this)}
-          renderHiddenRow={(idea, sectionID, rowID) => (
-            <TouchableHighlight onPress={() => {
-              this._handleRemoveIdea(rowID);
-            }} style={styles.rowBack}>
-              <Text style={styles.rowBackText}>Delete</Text>
-            </TouchableHighlight>
-          )}
-          disableRightSwipe={true}
-          rightOpenValue={-75}
         />
       );
     } else {
@@ -109,7 +119,21 @@ class IdeasList extends Component {
     const { state } = this.props;
 
     const rowIDDisplay = state.ideas.length - parseInt(rowID);
+    const index = rowIDDisplay - 1;
+
+    const swipeButtons = [{
+      text: 'Remove',
+      backgroundColor: 'red',
+      underlayColor: 'rgba(0, 0, 1, 0.6)',
+      onPress: () => {this._handleRemoveIdea(index); }
+    }];
+
     return (
+      <Swipeout right={swipeButtons}
+        onOpen={() => { this._handleOpen(index); }}
+        ref={row => this._rows[index] = row}
+        autoClose={false}
+        backgroundColor= 'transparent'>
       <IdeaCell onSelect={() => this._handleEditIdea(
         {
           title:  'Idea #' + rowIDDisplay,
@@ -117,7 +141,7 @@ class IdeasList extends Component {
           rightButtonTitle: '',
           leftButtonIcon: '',
           passProps: {
-            index: rowIDDisplay - 1,
+            index: index,
             rowIDDisplay: rowIDDisplay,
             idea: idea.title
           }
@@ -126,6 +150,7 @@ class IdeasList extends Component {
         rowIDDisplay={rowIDDisplay}
         idea={idea}
       />
+    </Swipeout>
     );
   }
 }
@@ -163,17 +188,5 @@ const styles = StyleSheet.create({
   },
   welcomeButton: {
     marginBottom: 150
-  },
-  rowBack: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: 15
-  },
-  rowBackText: {
-    color: 'white',
-    textAlign: 'right'
   }
 });
