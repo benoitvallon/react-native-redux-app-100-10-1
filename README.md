@@ -15,6 +15,7 @@ This project uses libraries and tools like:
 - [react-native](https://facebook.github.io/react-native)
 - [redux](http://redux.js.org) to organize the data flow management
 - [redux-storage](https://github.com/michaelcontento/redux-storage) for the data persistence in the App
+- [react-native-swipeout](https://github.com/dancormier/react-native-swipeout) for the swiping rows
 - [jest](https://facebook.github.io/jest) and [babel-jest](https://github.com/babel/babel-jest) for the tests
 
 ## What is the 100-10-1 method?
