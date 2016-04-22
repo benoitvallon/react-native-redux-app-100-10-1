@@ -2,9 +2,11 @@
 
 [![Build Status](https://travis-ci.org/benoitvallon/react-native-redux-app-100-10-1.svg?branch=master)](https://travis-ci.org/benoitvallon/react-native-redux-app-100-10-1) [![Dependency Status](https://david-dm.org/benoitvallon/react-native-redux-app-100-10-1.svg)](https://david-dm.org/benoitvallon/react-native-redux-app-100-10-1) [![devDependency Status](https://david-dm.org/benoitvallon/react-native-redux-app-100-10-1/dev-status.svg)](https://david-dm.org/benoitvallon/react-native-redux-app-100-10-1#info=devDependencies)
 
-## Screenshot
+## Screenshots
 
-![100-10-1 App](images/app.png "100-10-1 App")
+![100-10-1 App new idea](images/app-new-idea.png "100-10-1 App new idea")
+
+![100-10-1 App list](images/app-list.png "100-10-1 App list")
 
 ## Libraries/tools
 
