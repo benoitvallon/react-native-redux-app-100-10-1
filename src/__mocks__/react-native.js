@@ -4,11 +4,14 @@ import React from 'react';
 const ReactNative = React;
 
 ReactNative.StyleSheet = {
-  create: function create(styles) {
+  create(styles) {
     return styles;
   }
 };
 
+ReactNative.Alert = {
+  alert: () => {}
+};
 ReactNative.View = React.Component;
 ReactNative.ScrollView = React.Component;
 ReactNative.Text = React.Component;
