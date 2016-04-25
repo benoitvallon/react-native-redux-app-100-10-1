@@ -6,7 +6,6 @@ import * as actions from '../../../actions/ideaActions';
 import * as types from '../../../actions/actionTypes';
 
 describe('idea actions', function() {
-
   it('should be find an actions file', function() {
     expect(actions).toBeDefined();
   });
