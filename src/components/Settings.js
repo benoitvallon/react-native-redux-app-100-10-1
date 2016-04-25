@@ -18,7 +18,7 @@ import { connect } from 'react-redux';
 
 import ActivityView from 'react-native-activity-view';
 
-class Settings extends Component {
+export class Settings extends Component {
   constructor(props) {
     super(props);
   }
