@@ -17,7 +17,7 @@ import * as ideaActions from '../actions/ideaActions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-class AddIdea extends Component {
+export class AddIdea extends Component {
   constructor(props) {
     super(props);
 
@@ -63,8 +63,7 @@ class AddIdea extends Component {
           actions.remove(this.props.index);
           this.props.navigator.pop();
         }
-      },
-      {
+      }, {
         text: 'Cancel'
       }]
     );
