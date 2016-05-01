@@ -1,5 +1,5 @@
 const designUnit = {
-  primaryColor: '#6d4a72',
+  primaryColor: '#965B9F',
   tintColor: '#ffffff',
   titleTextColor: '#ffffff',
   backgroundColor: '#f2f2f2',

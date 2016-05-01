@@ -35,6 +35,7 @@ export default class App extends Component {
       <NavigatorIOS
         ref='nav'
         style={styles.container}
+        translucent={false}
         itemWrapperStyle={styles.wrapper}
         tintColor={design.designUnit.tintColor}
         barTintColor={design.designUnit.primaryColor}
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    backgroundColor: design.designUnit.backgroundColor,
-    marginTop: 64
+    backgroundColor: design.designUnit.backgroundColor
   }
 });
