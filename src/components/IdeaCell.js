@@ -15,7 +15,7 @@ import * as ideaActions from '../actions/ideaActions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
-class IdeaCell extends Component {
+export class IdeaCell extends Component {
   constructor(props) {
     super(props);
   }
