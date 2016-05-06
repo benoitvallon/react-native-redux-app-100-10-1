@@ -42,4 +42,23 @@ describe('idea cell', () => {
     expect(output.props.children[0].props.children.props.children).toEqual(1);
     expect(output.props.children[1].props.children).toEqual('My idea');
   });
+
+  it('should be able to press buttons for new idea', () => {
+    const props = {
+      index: 0,
+      rowIDDisplay: 1,
+      idea: {
+        title: 'My idea'
+      },
+      state: {
+        ideas: [ { title: 'My idea' }]
+      },
+      onSelect: expect.createSpy()
+    };
+    const { output } = setup(IdeaCell, props);
+
+    const button = output.props.children[2];
+    button.props.onPress();
+    expect(props.onSelect.calls.length).toBe(1);
+  });
 });
