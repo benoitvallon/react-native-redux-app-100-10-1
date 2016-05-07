@@ -20,7 +20,7 @@ export default class App extends Component {
     this.state = {
       settingsIcon: null
     };
-    Icon.getImageSource('navicon', 32, 'red').then(
+    Icon.getImageSource('ios-share-alt-outline', 32, 'red').then(
       (source) => this.setState({
         settingsIcon: source
       })
