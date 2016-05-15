@@ -26,6 +26,8 @@ describe('add idea page', () => {
   it('should render properly for new idea', () => {
     const props = {
       newIdea: true,
+      navigator: {},
+      actions: {},
       state: {
         ideas: [ { title: 'My idea' }]
       }
@@ -42,9 +44,9 @@ describe('add idea page', () => {
 
   it('should render properly for existing idea', () => {
     const props = {
-      index: 0,
-      rowIDDisplay: 1,
       idea: 'My idea',
+      navigator: {},
+      actions: {},
       state: {
         ideas: [ { title: 'My idea' }]
       }
@@ -88,7 +90,6 @@ describe('add idea page', () => {
   it('should be able to press buttons for existing idea', () => {
     const props = {
       index: 0,
-      rowIDDisplay: 1,
       idea: 'My idea',
       state: {
         ideas: [ { title: 'My idea' }]

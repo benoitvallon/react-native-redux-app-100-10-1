@@ -108,6 +108,14 @@ export class AddIdea extends Component {
   }
 }
 
+AddIdea.propTypes = {
+  idea: React.PropTypes.object,
+  actions: React.PropTypes.object.isRequired,
+  navigator: React.PropTypes.object.isRequired,
+  newIdea: React.PropTypes.bool,
+  index: React.PropTypes.number
+};
+
 export default connect(
   state => ({
     state: state.ideas
