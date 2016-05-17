@@ -9,6 +9,8 @@ import { Settings } from '../../../components/Settings';
 
 function setup(Component) {
   let props = {
+    navigator: {},
+    actions: {},
     state: {
       ideas: [ { title: 'My idea' }]
     }

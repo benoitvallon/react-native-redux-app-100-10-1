@@ -73,6 +73,12 @@ export class Settings extends Component {
   }
 }
 
+Settings.propTypes = {
+  actions: React.PropTypes.object.isRequired,
+  state: React.PropTypes.object.isRequired,
+  navigator: React.PropTypes.object.isRequired
+};
+
 export default connect(
   state => ({
     state: state.ideas
