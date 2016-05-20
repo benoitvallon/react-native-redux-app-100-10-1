@@ -109,9 +109,10 @@ export class AddIdea extends Component {
 }
 
 AddIdea.propTypes = {
-  idea: React.PropTypes.object,
   actions: React.PropTypes.object.isRequired,
+  state: React.PropTypes.object.isRequired,
   navigator: React.PropTypes.object.isRequired,
+  idea: React.PropTypes.string,
   newIdea: React.PropTypes.bool,
   index: React.PropTypes.number
 };
