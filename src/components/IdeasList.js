@@ -146,7 +146,6 @@ class IdeasList extends Component {
             idea: idea.title
           }
         })}
-        rowID={rowID}
         rowIDDisplay={rowIDDisplay}
         idea={idea}
       />
@@ -154,6 +153,12 @@ class IdeasList extends Component {
     );
   }
 }
+
+IdeasList.propTypes = {
+  actions: React.PropTypes.object.isRequired,
+  state: React.PropTypes.object.isRequired,
+  navigator: React.PropTypes.object.isRequired
+};
 
 export default connect(state => (
   {
