@@ -698,7 +698,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app100101.app/app100101";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-lc++",
 				);
 			};
 			name = Debug;
@@ -724,7 +723,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app100101.app/app100101";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-lc++",
 				);
 			};
 			name = Release;
