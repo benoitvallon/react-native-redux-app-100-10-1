@@ -696,6 +696,10 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app100101.app/app100101";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lc++",
+				);
 			};
 			name = Debug;
 		};
@@ -718,6 +722,10 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app100101.app/app100101";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lc++",
+				);
 			};
 			name = Release;
 		};
@@ -738,7 +746,10 @@
 				);
 				INFOPLIST_FILE = app100101/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.benoitvallon.app100-10-1";
 				PRODUCT_NAME = app100101;
 				PROVISIONING_PROFILE = "";
@@ -762,7 +773,10 @@
 				);
 				INFOPLIST_FILE = app100101/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.benoitvallon.app100-10-1";
 				PRODUCT_NAME = app100101;
 				PROVISIONING_PROFILE = "";
