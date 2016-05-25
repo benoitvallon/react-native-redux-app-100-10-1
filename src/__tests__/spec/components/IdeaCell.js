@@ -32,7 +32,8 @@ describe('idea cell', () => {
       },
       state: {
         ideas: [ { title: 'My idea' }]
-      }
+      },
+      onSelect: function() {}
     };
     const { output } = setup(IdeaCell, props);
 
