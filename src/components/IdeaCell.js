@@ -39,6 +39,12 @@ export class IdeaCell extends Component {
   }
 }
 
+IdeaCell.propTypes = {
+  rowIDDisplay: React.PropTypes.number.isRequired,
+  idea: React.PropTypes.object.isRequired,
+  onSelect: React.PropTypes.func.isRequired
+};
+
 export default connect(
   state => ({
     state: state.ideas
