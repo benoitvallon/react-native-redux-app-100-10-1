@@ -13,3 +13,7 @@ export default class Ideas extends Component {
     );
   }
 }
+
+Ideas.propTypes = {
+  navigator: React.PropTypes.object.isRequired
+};
