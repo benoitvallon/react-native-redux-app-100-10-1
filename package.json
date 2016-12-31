@@ -41,10 +41,10 @@
     "collectCoverage": true
   },
   "dependencies": {
-    "react": "^0.14.8",
-    "react-native": "0.25.1",
+    "react": "15.4.1",
+    "react-native": "0.39.2",
     "react-native-activity-view": "^0.2.9",
-    "react-native-swipeout": "^2.0.12",
+    "react-native-swipeout": "https://github.com/dancormier/react-native-swipeout.git",
     "react-native-vector-icons": "^3.0.0",
     "react-redux": "^5.0.1",
     "redux": "^3.5.2",

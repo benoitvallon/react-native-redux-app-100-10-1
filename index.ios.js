@@ -1,6 +1,9 @@
 'use strict';
 
-import React, { AppRegistry } from 'react-native';
+import React from 'react';
+import {
+  AppRegistry
+} from 'react-native';
 import AppWrapper from './src/containers/AppWrapper';
 
-AppRegistry.registerComponent('app', () => AppWrapper);
+AppRegistry.registerComponent('app-100-10-1', () => AppWrapper);
