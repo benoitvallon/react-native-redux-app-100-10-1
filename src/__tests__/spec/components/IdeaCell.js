@@ -1,7 +1,5 @@
 'use strict';
 
-jest.disableAutomock();
-
 import React, { View } from 'react-native';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';

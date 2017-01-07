@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "react": "15.4.1",
+    "react-dom": "^15.4.2",
     "react-native": "0.39.2",
     "react-native-activity-view": "^0.2.9",
     "react-native-swipeout": "https://github.com/dancormier/react-native-swipeout.git",
@@ -47,6 +48,7 @@
     "expect": "^1.20.1",
     "jest": "^18.1.0",
     "react-addons-test-utils": "^15.4.1",
+    "react-test-renderer": "^15.4.2",
     "rnpm-plugin-upgrade": "^0.26.0"
   }
 }
