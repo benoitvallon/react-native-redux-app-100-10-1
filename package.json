@@ -21,22 +21,8 @@
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": [
-      "js"
-    ],
-    "unmockedModulePathPatterns": [
-      "react",
-      "react-addons-test-utils",
-      "redux"
-    ],
-    "globals": {
-      "__DEV__": true
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "packager/react-packager/src/Activity/"
-    ],
+    "preset": "react-native",
+    "testEnvironment": "node",
     "verbose": true,
     "collectCoverage": true
   },
@@ -59,7 +45,7 @@
     "eslint": "^3.12.2",
     "eslint-plugin-react": "^6.8.0",
     "expect": "^1.20.1",
-    "jest-cli": "^18.1.0",
+    "jest": "^18.1.0",
     "react-addons-test-utils": "^15.4.1",
     "rnpm-plugin-upgrade": "^0.26.0"
   }
