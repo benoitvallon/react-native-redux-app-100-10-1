@@ -1,0 +1,29 @@
+exports[`idea actions should create an action to add an idea 1`] = `
+Object {
+  "data": "My first idea",
+  "type": "ADD",
+}
+`;
+
+exports[`idea actions should create an action to remove an idea 1`] = `
+Object {
+  "data": 1,
+  "type": "REMOVE",
+}
+`;
+
+exports[`idea actions should create an action to reset the idea list 1`] = `
+Object {
+  "type": "RESET",
+}
+`;
+
+exports[`idea actions should create an action to save an idea 1`] = `
+Object {
+  "data": Object {
+    "idea": "My second idea",
+    "index": 1,
+  },
+  "type": "SAVE",
+}
+`;
