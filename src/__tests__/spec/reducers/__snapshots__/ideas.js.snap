@@ -1,0 +1,54 @@
+exports[`ideas reducer should handle add and trim 1`] = `
+Object {
+  "ideas": Array [
+    Object {
+      "title": "My first idea",
+    },
+  ],
+}
+`;
+
+exports[`ideas reducer should handle add and trim 2`] = `
+Object {
+  "ideas": Array [
+    Object {
+      "title": "My first idea",
+    },
+    Object {
+      "title": "My second idea",
+    },
+  ],
+}
+`;
+
+exports[`ideas reducer should handle remove 1`] = `
+Object {
+  "ideas": Array [
+    Object {
+      "title": "My first idea",
+    },
+  ],
+}
+`;
+
+exports[`ideas reducer should handle reset 1`] = `
+Object {
+  "ideas": Array [],
+}
+`;
+
+exports[`ideas reducer should handle save and trim 1`] = `
+Object {
+  "ideas": Array [
+    Object {
+      "title": "My second idea edited",
+    },
+  ],
+}
+`;
+
+exports[`ideas reducer should return a wrong action 1`] = `
+Object {
+  "ideas": Array [],
+}
+`;

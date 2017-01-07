@@ -1,7 +1,5 @@
 'use strict';
 
-jest.disableAutomock();
-
 import reducer from '../../../reducers/ideas';
 import * as types from '../../../actions/actionTypes';
 
@@ -20,9 +18,7 @@ describe('ideas reducer', () => {
         type: types.WRONG,
         data: 'My first idea'
       })
-    ).toEqual({
-      ideas: []
-    });
+    ).toMatchSnapshot();
   });
 
   it('should handle add and trim', () => {
@@ -31,11 +27,7 @@ describe('ideas reducer', () => {
         type: types.ADD,
         data: 'My first idea     '
       })
-    ).toEqual({
-      ideas: [
-        { title: 'My first idea' }
-      ]
-    });
+    ).toMatchSnapshot();
 
     expect(
       reducer({
@@ -46,12 +38,7 @@ describe('ideas reducer', () => {
         type: types.ADD,
         data: 'My second idea \n\n\n '
       })
-    ).toEqual({
-      ideas: [
-        { title: 'My first idea' },
-        { title: 'My second idea' }
-      ]
-    });
+    ).toMatchSnapshot();
   });
 
   it('should handle remove', () => {
@@ -65,11 +52,7 @@ describe('ideas reducer', () => {
         type: types.REMOVE,
         data: 1
       })
-    ).toEqual({
-      ideas: [
-        { title: 'My first idea' }
-      ]
-    });
+    ).toMatchSnapshot();
   });
 
   it('should handle save and trim', () => {
@@ -85,11 +68,7 @@ describe('ideas reducer', () => {
           idea: 'My second idea edited \n\n\n '
         }
       })
-    ).toEqual({
-      ideas: [
-        { title: 'My second idea edited' }
-      ]
-    });
+    ).toMatchSnapshot();
   });
 
   it('should handle reset', () => {
@@ -101,8 +80,6 @@ describe('ideas reducer', () => {
       }, {
         type: types.RESET
       })
-    ).toEqual({
-      ideas: []
-    });
+    ).toMatchSnapshot();
   });
 });
